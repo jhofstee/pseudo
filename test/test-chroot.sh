@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Return vals: 2 - invalid arg list
 #              1 - chroot failed
@@ -23,5 +23,5 @@ then
     exit 0
 fi
 #echo "Failed"
-rm -f chroot_test chroot_test.c
+#rm -f chroot_test chroot_test.c
 exit 1
