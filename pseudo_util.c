@@ -180,6 +180,8 @@ pseudo_init_util(void) {
                 }
         }
         free(env);
+
+	//puts("pseudo_init_util");
 }
 
 /* 5 = ridiculous levels of duplication
@@ -723,6 +725,8 @@ pseudo_setupenv(void) {
 	free(pseudo_get_bindir());
 	free(pseudo_get_libdir());
 	free(pseudo_get_localstatedir());
+
+	//printf("ok\n");
 
         while (pseudo_env[i].key) {
 		if (pseudo_env[i].value)
@@ -1390,6 +1394,7 @@ pseudo_logfile(char *defname) {
 		return 0;
 }
 
+/*
 void
 pseudo_stat32_from64(struct stat *buf32, const struct stat64 *buf) {
 	buf32->st_dev = buf->st_dev;
@@ -1423,3 +1428,5 @@ pseudo_stat64_from32(struct stat64 *buf64, const struct stat *buf) {
 	buf64->st_mtime = buf->st_mtime;
 	buf64->st_ctime = buf->st_ctime;
 }
+*/
+

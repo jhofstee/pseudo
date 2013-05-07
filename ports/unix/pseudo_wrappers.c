@@ -1,3 +1,5 @@
+#if 0
+
 FILE *
 popen(const char *command, const char *mode) {
 	sigset_t saved;
@@ -47,4 +49,6 @@ wrap_popen(const char *command, const char *mode) {
 
 	return rc;
 }
+
+#endif
 

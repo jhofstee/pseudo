@@ -1,3 +1,5 @@
+#if 0
+
 /* these aren't used, but the wrapper table isn't happy unless they
  * exist
  */
@@ -373,4 +375,6 @@ wrap_fork(void) {
 
 	return rc;
 }
+
+#endif
 

@@ -2,6 +2,7 @@
 case $(uname -s) in
 Linux)	echo "linux";;
 Darwin)	echo "darwin";;
+FreeBSD) echo "freebsd";;
 *)	echo >&2 "Unknown result from uname -s: %(uname -s). Aborting."
 	exit 1
 	;;

@@ -137,7 +137,7 @@ main(int argc, char *argv[]) {
 	 * wrong.  The + suppresses this annoying behavior, but may not
 	 * be compatible with sane option libraries.
 	 */
-	while ((o = getopt(argc, argv, "+BCdfhi:lm:M:p:P:r:R:St:vV")) != -1) {
+	while ((o = getopt(argc, argv, "BCdfhi:lm:M:p:P:r:R:St:vV")) != -1) {
 		switch (o) {
 		case 'B': /* rebuild database */
 			opt_B = 1;
@@ -389,7 +389,9 @@ main(int argc, char *argv[]) {
 		}
 		pseudo_setupenv();
 
+		//printf("go.....%s!\n", fullpath);
 		rc = execv(fullpath, argv);
+		//puts("back");
 		if (rc == -1) {
 			pseudo_diag("pseudo: can't run %s: %s\n",
 				argv[0], strerror(errno));
