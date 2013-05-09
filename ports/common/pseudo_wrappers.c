@@ -369,7 +369,6 @@ static int
 wrap_execvp(const char *file, char *const *argv) {
 	int rc = -1;
 
-	puts(" bladlaafsfsddasf" );
 #include "guts/execvp.c"
 
 	return rc;
