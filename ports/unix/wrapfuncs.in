@@ -73,7 +73,7 @@ int utimes(const char *path, const struct timeval *times);
 int system(const char *command);
 
 # popen is not a syscall
-#FILE *popen(const char *command, const char *mode); /* hand_wrapped=1 */
+FILE *popen(const char *command, const char *mode); /* hand_wrapped=1 */
 
 # Based on experiments by Richard Purdie: Allow pseudo to eliminate
 # sync-type operations globally, mostly relevant for performance reasons
