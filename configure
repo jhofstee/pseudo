@@ -219,6 +219,9 @@ else
     SQLITE_MEMORY=""
 fi
 
+arch_flags=`echo $arch_flags | sed -e s/,/\\\\\\\\,/g`
+echo $arch_flags
+
 gsed -e '
   s,@PREFIX@,'"$opt_prefix"',g
   s,@LIBDIR@,'"$opt_libdir"',g
