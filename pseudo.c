@@ -389,7 +389,9 @@ main(int argc, char *argv[]) {
 		}
 		pseudo_setupenv();
 
+		//printf("go.....%s!\n", fullpath);
 		rc = execv(fullpath, argv);
+		//puts("back");
 		if (rc == -1) {
 			pseudo_diag("pseudo: can't run %s: %s\n",
 				argv[0], strerror(errno));

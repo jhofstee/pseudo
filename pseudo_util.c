@@ -180,6 +180,8 @@ pseudo_init_util(void) {
                 }
         }
         free(env);
+
+	//puts("pseudo_init_util");
 }
 
 /* 5 = ridiculous levels of duplication
@@ -723,6 +725,8 @@ pseudo_setupenv(void) {
 	free(pseudo_get_bindir());
 	free(pseudo_get_libdir());
 	free(pseudo_get_localstatedir());
+
+	//printf("ok\n");
 
         while (pseudo_env[i].key) {
 		if (pseudo_env[i].value)
