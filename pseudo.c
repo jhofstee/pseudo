@@ -137,7 +137,7 @@ main(int argc, char *argv[]) {
 	 * wrong.  The + suppresses this annoying behavior, but may not
 	 * be compatible with sane option libraries.
 	 */
-	while ((o = getopt(argc, argv, "+BCdfhi:lm:M:p:P:r:R:St:vV")) != -1) {
+	while ((o = getopt(argc, argv, "BCdfhi:lm:M:p:P:r:R:St:vV")) != -1) {
 		switch (o) {
 		case 'B': /* rebuild database */
 			opt_B = 1;
