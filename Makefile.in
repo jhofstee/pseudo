@@ -61,7 +61,7 @@ DBOBJS=pseudo_db.o
 WRAPOBJS=pseudo_wrappers.o
 
 # needed for anything that links with pseduo_client.o, pretty much
-CLIENT_LDFLAGS=-ldl -lpthread
+CLIENT_LDFLAGS= -lpthread
 DB_LDFLAGS=@SQLITE_LDARG@ -lpthread
 
 PSEUDO=$(BIN)/pseudo
