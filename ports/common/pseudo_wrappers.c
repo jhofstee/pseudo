@@ -1,3 +1,5 @@
+#if 1
+
 /* these aren't used, but the wrapper table isn't happy unless they
  * exist
  */
@@ -229,6 +231,8 @@ execv(const char *file, char *const *argv) {
 	return rc;
 }
 
+#endif
+
 int
 execve(const char *file, char *const *argv, char *const *envp) {
 	sigset_t saved;
@@ -330,6 +334,7 @@ fork(void) {
 	return rc;
 }
 
+#if 1
 int
 vfork(void) {
 	/* we don't provide support for the distinct semantics
@@ -337,7 +342,9 @@ vfork(void) {
 	 */
 	return fork();
 }
+#endif
 
+#if 1
 static int
 wrap_execv(const char *file, char *const *argv) {
 	int rc = -1;
@@ -346,6 +353,7 @@ wrap_execv(const char *file, char *const *argv) {
 
 	return rc;
 }
+#endif
 
 static int
 wrap_execve(const char *file, char *const *argv, char *const *envp) {
@@ -356,6 +364,7 @@ wrap_execve(const char *file, char *const *argv, char *const *envp) {
 	return rc;
 }
 
+#if 1
 static int
 wrap_execvp(const char *file, char *const *argv) {
 	int rc = -1;
@@ -365,6 +374,8 @@ wrap_execvp(const char *file, char *const *argv) {
 	return rc;
 }
 
+#endif
+
 static int
 wrap_fork(void) {
 	int rc = -1;
@@ -373,4 +384,6 @@ wrap_fork(void) {
 
 	return rc;
 }
+
+//#endif
 
