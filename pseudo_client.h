@@ -22,13 +22,14 @@ extern pseudo_msg_t *pseudo_client_op(pseudo_op_t op, int access, int fd, int di
 #define base_lstat real_lstat64
 #define base_fstat real_fstat64
 #define base_stat real_stat64
-#define base_fstatat(dirfd, path, buf, flags) real___fxstatat64(_STAT_VER, dirfd, path, buf, flags)
+#define base_fstatat(dirfd, path, buf, flags) real_fstatat(dirfd, path, buf, flags)
 #else
 #define base_lstat real_lstat
 #define base_fstat real_fstat
 #define base_stat real_stat
-#define base_fstatat(dirfd, path, buf, flags) real___fxstatat(_STAT_VER, dirfd, path, buf, flags)
+#define base_fstatat(dirfd, path, buf, flags) real_fstatat(dirfd, path, buf, flags)
 #endif
+
 extern void pseudo_antimagic(void);
 extern void pseudo_magic(void);
 extern void pseudo_client_touchuid(void);
