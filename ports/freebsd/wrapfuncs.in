@@ -1,5 +1,7 @@
 # On Darwin, mode_t promotes to int, so you have to use int for va_arg
 int fstat(int fd, struct stat *buf); /* inode64=1 */
+# since FreeBSD 8
+int fstatat(int fd, const char *path, struct stat *buf, int flag);
 int open(const char *path, int flags, ...{int mode}); /* flags=0 */
 int openat(int dirfd, const char *path, int flags, ...{int mode});
 int stat(const char *path, struct stat *buf); /* inode64=1 */
